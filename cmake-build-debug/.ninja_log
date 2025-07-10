@@ -1,0 +1,7 @@
+# ninja log v6
+0	54	1752160712689673711	build.ninja	4202d31181eedf20
+2	192	1752160722416320771	CMakeFiles/magma-voxel.dir/external/glad/src/gl.c.o	f7339840954fd217
+4	482	1752160722418341802	CMakeFiles/magma-voxel.dir/src/cube_renderer.cpp.o	1db6bb8976eb89cf
+4	675	1752160722418341802	CMakeFiles/magma-voxel.dir/src/shader.cpp.o	231824a277e5c8d4
+5	844	1752160979081586940	CMakeFiles/magma-voxel.dir/src/main.cpp.o	f6e6055b6fab9a60
+848	981	1752160979924718984	magma-voxel	60f3c0479c40a4d3

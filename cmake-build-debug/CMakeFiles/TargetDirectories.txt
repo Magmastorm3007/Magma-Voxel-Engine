@@ -1,0 +1,3 @@
+/home/magmastorm/CLionProjects/MagmaVoxel/cmake-build-debug/CMakeFiles/magma-voxel.dir
+/home/magmastorm/CLionProjects/MagmaVoxel/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/magmastorm/CLionProjects/MagmaVoxel/cmake-build-debug/CMakeFiles/rebuild_cache.dir
