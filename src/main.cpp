@@ -105,7 +105,7 @@ int main() {
     Shader shader("shaders/cube.vert", "shaders/cube.frag");
     CubeRenderer cubeRenderer;
 
-    voxelWorld.generateTerrain(32, 32, 8);
+    voxelWorld.generateTerrain(128, 128, 8);
 
     while (!glfwWindowShouldClose(window)) {
         float currentFrame = float(glfwGetTime());
