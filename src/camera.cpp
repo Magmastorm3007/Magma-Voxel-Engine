@@ -1,4 +1,4 @@
-#include "Camera.h"
+#include "camera.h"
 
 Camera::Camera(glm::vec3 startPos)
     : position(startPos), front(glm::vec3(0.0f, 0.0f, -1.0f)), up(glm::vec3(0.0f, 1.0f, 0.0f)),

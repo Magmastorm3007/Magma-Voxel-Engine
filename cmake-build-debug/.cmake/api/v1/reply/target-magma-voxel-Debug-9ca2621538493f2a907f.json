@@ -46,7 +46,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 31,
+				"line" : 35,
 				"parent" : 0
 			},
 			{
@@ -148,7 +148,9 @@
 			[
 				1,
 				2,
-				4
+				4,
+				6,
+				8
 			]
 		}
 	],
@@ -208,7 +210,9 @@
 				0,
 				1,
 				2,
-				4
+				4,
+				6,
+				8
 			]
 		},
 		{
@@ -216,7 +220,9 @@
 			"sourceIndexes" : 
 			[
 				3,
-				5
+				5,
+				7,
+				9
 			]
 		}
 	],
@@ -254,6 +260,28 @@
 		{
 			"backtrace" : 2,
 			"path" : "src/cube_renderer.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "src/camera.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/camera.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "src/voxel_world.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/voxel_world.h",
 			"sourceGroupIndex" : 1
 		}
 	],

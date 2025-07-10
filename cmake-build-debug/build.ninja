@@ -77,6 +77,20 @@ build CMakeFiles/magma-voxel.dir/src/cube_renderer.cpp.o: CXX_COMPILER__magma-vo
   OBJECT_DIR = CMakeFiles/magma-voxel.dir
   OBJECT_FILE_DIR = CMakeFiles/magma-voxel.dir/src
 
+build CMakeFiles/magma-voxel.dir/src/camera.cpp.o: CXX_COMPILER__magma-voxel_unscanned_Debug /home/magmastorm/CLionProjects/MagmaVoxel/src/camera.cpp || cmake_object_order_depends_target_magma-voxel
+  DEP_FILE = CMakeFiles/magma-voxel.dir/src/camera.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/magmastorm/CLionProjects/MagmaVoxel/external/glad/include -isystem /home/magmastorm/vcpkg/installed/x64-linux/include
+  OBJECT_DIR = CMakeFiles/magma-voxel.dir
+  OBJECT_FILE_DIR = CMakeFiles/magma-voxel.dir/src
+
+build CMakeFiles/magma-voxel.dir/src/voxel_world.cpp.o: CXX_COMPILER__magma-voxel_unscanned_Debug /home/magmastorm/CLionProjects/MagmaVoxel/src/voxel_world.cpp || cmake_object_order_depends_target_magma-voxel
+  DEP_FILE = CMakeFiles/magma-voxel.dir/src/voxel_world.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/magmastorm/CLionProjects/MagmaVoxel/external/glad/include -isystem /home/magmastorm/vcpkg/installed/x64-linux/include
+  OBJECT_DIR = CMakeFiles/magma-voxel.dir
+  OBJECT_FILE_DIR = CMakeFiles/magma-voxel.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target magma-voxel
@@ -85,7 +99,7 @@ build CMakeFiles/magma-voxel.dir/src/cube_renderer.cpp.o: CXX_COMPILER__magma-vo
 #############################################
 # Link the executable magma-voxel
 
-build magma-voxel: CXX_EXECUTABLE_LINKER__magma-voxel_Debug CMakeFiles/magma-voxel.dir/external/glad/src/gl.c.o CMakeFiles/magma-voxel.dir/src/main.cpp.o CMakeFiles/magma-voxel.dir/src/shader.cpp.o CMakeFiles/magma-voxel.dir/src/cube_renderer.cpp.o | /home/magmastorm/vcpkg/installed/x64-linux/debug/lib/libglfw3.a /usr/lib/x86_64-linux-gnu/librt.a /usr/lib/x86_64-linux-gnu/libm.so
+build magma-voxel: CXX_EXECUTABLE_LINKER__magma-voxel_Debug CMakeFiles/magma-voxel.dir/external/glad/src/gl.c.o CMakeFiles/magma-voxel.dir/src/main.cpp.o CMakeFiles/magma-voxel.dir/src/shader.cpp.o CMakeFiles/magma-voxel.dir/src/cube_renderer.cpp.o CMakeFiles/magma-voxel.dir/src/camera.cpp.o CMakeFiles/magma-voxel.dir/src/voxel_world.cpp.o | /home/magmastorm/vcpkg/installed/x64-linux/debug/lib/libglfw3.a /usr/lib/x86_64-linux-gnu/librt.a /usr/lib/x86_64-linux-gnu/libm.so
   FLAGS = -g
   LINK_LIBRARIES = /home/magmastorm/vcpkg/installed/x64-linux/debug/lib/libglfw3.a  -ldl  /usr/lib/x86_64-linux-gnu/librt.a  -lm  -ldl
   OBJECT_DIR = CMakeFiles/magma-voxel.dir

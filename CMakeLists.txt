@@ -25,6 +25,10 @@ add_executable(magma-voxel
         src/shader.h
         src/cube_renderer.cpp
         src/cube_renderer.h
+        src/camera.cpp
+        src/camera.h
+        src/voxel_world.cpp
+        src/voxel_world.h
 )
 
 # Link to libraries
