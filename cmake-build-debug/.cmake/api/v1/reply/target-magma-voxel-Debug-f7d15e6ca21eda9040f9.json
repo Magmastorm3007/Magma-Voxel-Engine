@@ -34,7 +34,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 21,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
@@ -46,7 +46,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 35,
+				"line" : 36,
 				"parent" : 0
 			},
 			{
@@ -102,6 +102,10 @@
 			[
 				{
 					"backtrace" : 10,
+					"path" : "/home/magmastorm/CLionProjects/MagmaVoxel/external/stb"
+				},
+				{
+					"backtrace" : 10,
 					"path" : "/home/magmastorm/CLionProjects/MagmaVoxel/external/glad/include"
 				},
 				{
@@ -125,6 +129,10 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 10,
+					"path" : "/home/magmastorm/CLionProjects/MagmaVoxel/external/stb"
+				},
 				{
 					"backtrace" : 10,
 					"path" : "/home/magmastorm/CLionProjects/MagmaVoxel/external/glad/include"

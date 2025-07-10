@@ -5,13 +5,15 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include "voxel_world.h"
 
 #include "shader.h"
 #include "cube_renderer.h"
 #include "camera.h"
+#include "voxel_world.h"
 
-Camera camera(glm::vec3(0.0f, 1.6f, 3.0f));
+// Global camera
+Camera camera(glm::vec3(0.0f, 30.0f, 30.0f)); // Initialized outside main
+
 float lastX = 400, lastY = 300;
 bool firstMouse = true;
 
@@ -48,12 +50,15 @@ void processInput(GLFWwindow* window) {
 }
 
 int main() {
+    // Set camera initial direction
+    camera.front = glm::normalize(glm::vec3(0.0f, -0.5f, -1.0f));
+
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Magma Voxel", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(1920, 1080, "Magma Voxel", nullptr, nullptr);
     if (!window) {
         std::cerr << "Failed to create GLFW window\n";
         glfwTerminate();
@@ -71,12 +76,10 @@ int main() {
     glEnable(GL_DEPTH_TEST);
     glClearColor(0.52f, 0.80f, 0.92f, 1.0f); // soft sky blue
 
-    //glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-
     Shader shader("shaders/cube.vert", "shaders/cube.frag");
     CubeRenderer cubeRenderer;
     VoxelWorld voxelWorld;
-    voxelWorld.generateFlatGround(10, 10);
+    voxelWorld.generateTerrain(32, 32, 8);  // or smaller if laggy
 
     while (!glfwWindowShouldClose(window)) {
         float currentFrame = float(glfwGetTime());
@@ -87,26 +90,18 @@ int main() {
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glm::mat4 model = glm::mat4(1.0f);
         glm::mat4 view = camera.getViewMatrix();
         glm::mat4 projection = glm::perspective(glm::radians(60.0f), 800.f / 600.f, 0.1f, 100.0f);
+        glm::mat4 viewProj = projection * view;
 
         shader.use();
+        shader.setMat4("view", glm::value_ptr(view));
+        shader.setMat4("projection", glm::value_ptr(projection));
+        shader.setVec3("lightPos", glm::vec3(10.0f, 10.0f, 10.0f));
+        shader.setVec3("viewPos", camera.position);
+        shader.setVec3("blockColor", glm::vec3(0.2f, 0.8f, 0.2f)); // green
 
-    shader.setMat4("view", glm::value_ptr(view));
-    shader.setMat4("projection", glm::value_ptr(projection));
-    shader.setVec3("lightPos", glm::vec3(10.0f, 10.0f, 10.0f));
-    shader.setVec3("viewPos", camera.position);
-    shader.setVec3("blockColor", glm::vec3(0.2f, 0.8f, 0.2f));  // green grass
-
-glm::mat4 viewProj = projection * view;
-shader.setMat4("model", glm::value_ptr(glm::mat4(1.0f)));  // just in case
-
-voxelWorld.draw(cubeRenderer, shader, viewProj);  
-
-        
-        
-
+        voxelWorld.draw(cubeRenderer, shader, viewProj);
 
         glfwSwapBuffers(window);
         glfwPollEvents();

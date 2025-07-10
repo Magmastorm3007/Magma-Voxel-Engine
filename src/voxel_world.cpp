@@ -1,4 +1,9 @@
+#define STB_PERLIN_IMPLEMENTATION
+#include <stb_perlin.h>
+
 #include "voxel_world.h"
+
+
 #include "cube_renderer.h"
 #include "shader.h"
 #include <glm/glm.hpp>
@@ -29,10 +34,16 @@ bool isCubeInFrustum(const glm::vec3& pos, const glm::mat4& VP) {
     return false;
 }
 
-void VoxelWorld::generateFlatGround(int width, int depth) {
+void VoxelWorld::generateTerrain(int width, int depth, int maxHeight) {
+    float scale = 0.1f; // Smaller = smoother terrain
     for (int x = -width / 2; x < width / 2; ++x) {
         for (int z = -depth / 2; z < depth / 2; ++z) {
-            voxels[{x, 0, z}] = Voxel{};
+            float noise = stb_perlin_noise3(x * scale, 0.0f, z * scale, 0, 0, 0);
+            int height = static_cast<int>((noise + 1.0f) / 2.0f * maxHeight); // Normalize
+
+            for (int y = 0; y <= height; ++y) {
+                voxels[{x, y, z}] = Voxel{};
+            }
         }
     }
 }

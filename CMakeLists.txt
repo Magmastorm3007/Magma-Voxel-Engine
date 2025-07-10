@@ -9,6 +9,7 @@ find_package(glm REQUIRED)
 
 # Include glad headers manually
 include_directories(
+        external/stb
         external/glad/include
         ${GLFW_INCLUDE_DIRS}
         ${GLM_INCLUDE_DIRS}

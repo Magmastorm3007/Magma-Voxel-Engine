@@ -31,7 +31,8 @@ public:
 
     void generateFlatGround(int width, int depth);
    void draw(CubeRenderer& renderer, Shader& shader, const glm::mat4& viewProj) const;
-
+   void generateTerrain(int width, int depth, int maxHeight);
+ 
     // You can add more methods for generating different terrains, adding/removing voxels, etc.
 };
 
