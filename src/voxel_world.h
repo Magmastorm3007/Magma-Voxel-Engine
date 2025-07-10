@@ -9,6 +9,7 @@
 struct Voxel {
     bool active = true;
     // You can later add: material, type, etc.
+    
 };
 
 struct VoxelPos {
@@ -28,7 +29,8 @@ struct VoxelHash {
 class VoxelWorld {
 public:
     std::unordered_map<VoxelPos, Voxel, VoxelHash> voxels;
-
+    void deactivateVoxel(const glm::ivec3& worldPos);
+    Voxel* getVoxel(const glm::ivec3& worldPos);
     void generateFlatGround(int width, int depth);
    void draw(CubeRenderer& renderer, Shader& shader, const glm::mat4& viewProj) const;
    void generateTerrain(int width, int depth, int maxHeight);

@@ -2,7 +2,7 @@
 #include <stb_perlin.h>
 
 #include "voxel_world.h"
-
+#include "voxel_utils.h"
 
 #include "cube_renderer.h"
 #include "shader.h"
@@ -47,6 +47,20 @@ void VoxelWorld::generateTerrain(int width, int depth, int maxHeight) {
         }
     }
 }
+void VoxelWorld::deactivateVoxel(const glm::ivec3& worldPos) {
+    auto it = voxels.find({worldPos.x, worldPos.y, worldPos.z});
+    if (it != voxels.end() && it->second.active) {
+        it->second.active = false;
+    }
+}
+
+Voxel* VoxelWorld::getVoxel(const glm::ivec3& worldPos) {
+    auto it = voxels.find({worldPos.x, worldPos.y, worldPos.z});
+    if (it == voxels.end()) return nullptr;
+    return &(it->second);
+}
+
+
 
 void VoxelWorld::draw(CubeRenderer& renderer, Shader& shader, const glm::mat4& viewProj) const {
     for (const auto& [pos, voxel] : voxels) {
