@@ -77,7 +77,7 @@
 
             // Distance culling
             float distSq = glm::dot(worldPos - cameraPos, worldPos - cameraPos);
-            if (distSq > 200.0f * 200.0f) continue;  // Skip far voxels (e.g. >200 units)
+            if (distSq > 400.0f * 400.0f) continue;  // Skip far voxels (e.g. >200 units)
 
             // Skip fully surrounded blocks (face culling)
             VoxelPos neighbors[6] = {
