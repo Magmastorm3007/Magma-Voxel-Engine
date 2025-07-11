@@ -1,6 +1,12 @@
 # 🟫 Magma Voxel Engine
 
-OpenGL voxel sandbox. FPS camera, block collision, terrain via Perlin noise. Shoot voxels, render gun, keep it light.
+OpenGL voxel sandbox. FPS camera, block collision, terrain via Perlin noise. Shoot voxels, render projectiles.Adding more features, like chunks for large scale worlds and mesh optimization as well as physics simulation.
+With Modern AI Tools it is easier to setup a modern CPP Project and OpenGL libs to work on the same. Hope you like this project!
+
+Note:
+Traditionally, voxels have lower performance than polygons because they require significantly more memory and computational power to represent and render 3D objects. While polygons only store surface geometry, making them highly efficient and well-suited to the hardware acceleration provided by modern GPUs, voxels represent entire volumes—including empty or hidden spaces—which dramatically increases memory usage. Rendering voxels also typically involves generating polygon meshes on the fly or using computationally intensive techniques like raycasting, both of which are less optimized than the standard polygon pipeline. As a result, real-time voxel graphics often struggle with scalability and efficiency compared to polygon-based graphics, especially at higher resolutions or with large, complex scenes.
+
+Voxels are particularly well-suited for applications that require real-time editing, destructible environments, or volumetric effects. Unlike polygons, voxels make it easy to add, remove, or modify material dynamically, and are ideal for representing complex internal structures, terrain with caves or overhangs, and volumetric phenomena like smoke or fluids. This makes them a strong choice for sandbox games, scientific visualization, and simulations where full 3D data is needed.
 
 ---
 
@@ -24,22 +30,7 @@ OpenGL voxel sandbox. FPS camera, block collision, terrain via Perlin noise. Sho
 
 ## 🗂️ Folder Structure
 
-├── shaders/
-│ ├── cube.vert
-│ └── cube.frag
-├── pics/
-│ ├── main_view.png
-│ └── gun_view.png
-├── src/
-│ ├── main.cpp
-│ ├── camera.h
-│ ├── cube_renderer.h
-│ ├── voxel_world.h
-│ ├── voxel_utils.h
-│ ├── shader.h
-│ └── particle.h
-└── README.md
-
+<pre> ```bash . ├── shaders/ │ ├── cube.vert │ └── cube.frag ├── pics/ │ ├── main_view.png  ├── src/ │ ├── main.cpp │ ├── camera.h │ ├── cube_renderer.h │ ├── voxel_world.h │ ├── voxel_utils.h │ ├── shader.h │ └── particle.h └── README.md ``` </pre>
 
 ---
 
